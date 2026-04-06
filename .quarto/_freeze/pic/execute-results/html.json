@@ -1,0 +1,17 @@
+{
+  "hash": "79f4b799e45bbf1f255f38603f712ed8",
+  "result": {
+    "engine": "knitr",
+    "markdown": "\n::: {.cell}\n\n```{.r .cell-code}\nlibrary(readr)\nlibrary(tidyverse)\n\ndf <- read_csv(\"data/data.csv\") |>\n  mutate(date = as.Date(date))\n\ndf |>\n  pivot_longer(-date) |>\n  ggplot(aes(date, value, color = name)) +\n  geom_line() +\n  geom_point()\n```\n\n::: {.cell-output-display}\n![](pic_files/figure-html/unnamed-chunk-1-1.png){width=672}\n:::\n:::\n",
+    "supporting": [
+      "pic_files"
+    ],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

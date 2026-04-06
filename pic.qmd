@@ -1,0 +1,15 @@
+```{r}
+#| message: false
+#| warning: false
+library(readr)
+library(tidyverse)
+
+df <- read_csv("data/data.csv") |>
+  mutate(date = as.Date(date))
+
+df |>
+  pivot_longer(-date) |>
+  ggplot(aes(date, value, color = name)) +
+  geom_line() +
+  geom_point()
+```
